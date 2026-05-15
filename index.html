@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bizarre Website</title>
+
+<style>
+    body{
+        margin:0;
+        overflow:hidden;
+        font-family:Comic Sans MS, cursive;
+        background:linear-gradient(45deg, hotpink, lime, cyan, yellow, orange, purple);
+        background-size:400% 400%;
+        animation:bgMove 5s infinite alternate;
+    }
+
+    @keyframes bgMove{
+        0%{background-position:left;}
+        100%{background-position:right;}
+    }
+
+    .floating{
+        position:absolute;
+        font-size:40px;
+        animation:spin 6s linear infinite;
+        user-select:none;
+    }
+
+    @keyframes spin{
+        0%{
+            transform:rotate(0deg) scale(1);
+        }
+        50%{
+            transform:rotate(180deg) scale(2);
+        }
+        100%{
+            transform:rotate(360deg) scale(1);
+        }
+    }
+
+    .center{
+        position:absolute;
+        top:50%;
+        left:50%;
+        transform:translate(-50%,-50%);
+        text-align:center;
+        color:white;
+    }
+
+    h1{
+        font-size:70px;
+        text-shadow:
+            5px 5px red,
+            -5px -5px blue,
+            10px 10px lime;
+        animation:shake 0.2s infinite alternate;
+    }
+
+    @keyframes shake{
+        from{
+            transform:translateX(-5px);
+        }
+        to{
+            transform:translateX(5px);
+        }
+    }
+
+    button{
+        padding:20px;
+        font-size:25px;
+        border:none;
+        border-radius:20px;
+        background:yellow;
+        color:black;
+        cursor:pointer;
+        animation:rainbow 1s infinite;
+    }
+
+    @keyframes rainbow{
+        0%{background:red;}
+        20%{background:orange;}
+        40%{background:yellow;}
+        60%{background:lime;}
+        80%{background:cyan;}
+        100%{background:magenta;}
+    }
+
+    marquee{
+        position:absolute;
+        bottom:0;
+        font-size:40px;
+        color:white;
+        background:black;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="center">
+    <h1>WELCOME TO CHAOS</h1>
+    <button onclick="explode()">DO NOT CLICK</button>
+</div>
+
+<marquee scrollamount="20">
+🌈 WARNING 🌈 TOO MUCH COLOR 🌈 INTERNET FROM 2006 🌈
+</marquee>
+
+<div class="floating" style="top:10%; left:20%;">🦆</div>
+<div class="floating" style="top:70%; left:80%;">👁️</div>
+<div class="floating" style="top:30%; left:60%;">🍕</div>
+<div class="floating" style="top:80%; left:10%;">🐸</div>
+<div class="floating" style="top:50%; left:90%;">💀</div>
+
+<script>
+function explode(){
+    for(let i=0;i<100;i++){
+
+        let div = document.createElement("div");
+
+        div.innerHTML = ["🐸","💀","👁️","🍕","🦆","🌈"][Math.floor(Math.random()*6)];
+
+        div.style.position = "absolute";
+        div.style.left = Math.random()*window.innerWidth + "px";
+        div.style.top = Math.random()*window.innerHeight + "px";
+        div.style.fontSize = (20 + Math.random()*80) + "px";
+        div.style.transform = `rotate(${Math.random()*360}deg)`;
+
+        document.body.appendChild(div);
+    }
+
+    document.body.style.filter = "hue-rotate(180deg)";
+}
+</script>
+
+</body>
+</html>
