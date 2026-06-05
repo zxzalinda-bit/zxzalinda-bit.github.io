@@ -1,146 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <script src="https://pl29456362.effectivecpmnetwork.com/57/53/a1/5753a1e9965a15ed323d58fc00ea5fed.js"></script>
- https://www.effectivecpmnetwork.com/b1da6pacw?key=7918454d16618999a9e3ceb0e83aabbe
-   
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bizarre Website</title>
-
-<style>
-    body{
-        margin:0;
-        overflow:hidden;
-        font-family:Comic Sans MS, cursive;
-        background:linear-gradient(45deg, hotpink, lime, cyan, yellow, orange, purple);
-        background-size:400% 400%;
-        animation:bgMove 5s infinite alternate;
-    }
-
-    @keyframes bgMove{
-        0%{background-position:left;}
-        100%{background-position:right;}
-    }
-
-    .floating{
-        position:absolute;
-        font-size:40px;
-        animation:spin 6s linear infinite;
-        user-select:none;
-    }
-
-    @keyframes spin{
-        0%{
-            transform:rotate(0deg) scale(1);
-        }
-        50%{
-            transform:rotate(180deg) scale(2);
-        }
-        100%{
-            transform:rotate(360deg) scale(1);
-        }
-    }
-
-    .center{
-        position:absolute;
-        top:50%;
-        left:50%;
-        transform:translate(-50%,-50%);
-        text-align:center;
-        color:white;
-    }
-
-    h1{
-        font-size:70px;
-        text-shadow:
-            5px 5px red,
-            -5px -5px blue,
-            10px 10px lime;
-        animation:shake 0.2s infinite alternate;
-    }
-
-    @keyframes shake{
-        from{
-            transform:translateX(-5px);
-        }
-        to{
-            transform:translateX(5px);
-        }
-    }
-
-    button{
-        padding:20px;
-        font-size:25px;
-        border:none;
-        border-radius:20px;
-        background:yellow;
-        color:black;
-        cursor:pointer;
-        animation:rainbow 1s infinite;
-    }
-
-    @keyframes rainbow{
-        0%{background:red;}
-        20%{background:orange;}
-        40%{background:yellow;}
-        60%{background:lime;}
-        80%{background:cyan;}
-        100%{background:magenta;}
-    }
-
-    marquee{
-        position:absolute;
-        bottom:0;
-        font-size:40px;
-        color:white;
-        background:black;
-    }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Application Error</title>
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Theme style (AdminLTE) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/css/adminlte.min.css">
+  <style>
+    body { background-color: #f4f6f9; padding: 20px; }
+    .error-header { background-color: #dc3545; color: white; padding: 15px; border-radius: 4px; margin-bottom: 20px; }
+    pre { background: #272822; color: #f8f8f2; padding: 15px; border-radius: 4px; overflow-x: auto; }
+  </style>
 </head>
+<body class="hold-transition sidebar-collapse">
 
-<body>
+<div class="container-fluid">
+  
+  <!-- Custom Application Alert -->
+  <div class="error-header shadow">
+    <h5><i class="icon fas fa-ban"></i> Action Required:</h5>
+    <p class="mb-0">Mysql:Usrmgt Getachew3397 [Getachew3397@school.com] should reset its password, index:20</p>
+  </div>
 
-<div class="center">
-    <h1>WELCOME TO CHAOS</h1>
-    <button onclick="explode()">DO NOT CLICK</button>
+  <div class="row">
+    <!-- Left Column: Exception details -->
+    <div class="col-md-7">
+      <div class="card card-outline card-danger">
+        <div class="card-header">
+          <h3 class="card-title text-danger">
+            <i class="fas fa-exclamation-triangle mr-1"></i> ErrorException
+          </h3>
+          <div class="card-tools">
+            <span class="badge badge-dark">PHP 8.1.34</span>
+            <span class="badge badge-primary">Laravel 10.6.2</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <h4 class="text-bold text-dark">Attempt to read property "photo" on null</h4>
+          <p class="text-muted">Occurred in: <code>resources/views/profile-mgmt/index.blade.php : line 18</code></p>
+          
+          <hr>
+          
+          <h5>Blade Code Context:</h5>
+          <pre><code>// Line 18 failure context:
+@if($employeeData->photo != null && $employeeData->photo != "")
+  &lt;img class="profile-user-img img-fluid img-circle" style='width:120px;height:120px;'
+       src="{{asset('images/'.$settingData->schoolCode.'//employee/'.$employeeData->photo)}}"&gt;
+@endif</code></pre>
+          <p class="small text-warning"><i class="fas fa-info-circle"></i> <strong>Fix Suggestion:</strong> Ensure `$employeeData` is correctly queried and passed from `ProfileController@index`. If a profile can natively not exist, change the condition to: <code>@if(optional($employeeData)->photo)</code>.</p>
+        </div>
+      </div>
+
+      <!-- SQL Queries Card -->
+      <div class="card card-outline card-info">
+        <div class="card-header">
+          <h3 class="card-title"><i class="fas fa-database mr-1"></i> Executed Database Queries</h3>
+        </div>
+        <div class="card-body p-0">
+          <table class="table table-striped table-valign-middle mb-0">
+            <thead>
+              <tr>
+                <th>Time</th>
+                <th>Duration</th>
+                <th>Query</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>6:22:56 AM</td>
+                <td><span class="badge badge-secondary">1.64ms</span></td>
+                <td><code>select * from `users` where `id` = ? and `users`.`deleted_at` is null limit 1</code></td>
+              </tr>
+              <tr>
+                <td>6:22:56 AM</td>
+                <td><span class="badge badge-secondary">0.40ms</span></td>
+                <td><code>select * from `general_settings` order by `id` desc limit 1</code></td>
+              </tr>
+              <tr>
+                <td>6:22:56 AM</td>
+                <td><span class="badge badge-secondary">0.38ms</span></td>
+                <td><code>select * from `employees` where `employees`.`id` = ? and `employees`.`deleted_at` is null limit 1</code></td>
+              </tr>
+              <tr>
+                <td>6:22:56 AM</td>
+                <td><span class="badge badge-secondary">0.25ms</span></td>
+                <td><code>select * from `user_categories` where `user_categories`.`id` = ? and `user_categories`.`deleted_at` is null limit 1</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Column: Request context -->
+    <div class="col-md-5">
+      <!-- Request Details -->
+      <div class="card card-secondary">
+        <div class="card-header">
+          <h3 class="card-title"><i class="fas fa-exchange-alt mr-1"></i> HTTP Request Meta</h3>
+        </div>
+        <div class="card-body p-0">
+          <table class="table table-sm text-sm mb-0">
+            <tbody>
+              <tr>
+                <td style="width: 30%; padding-left: 12px;"><strong>URL</strong></td>
+                <td><code>https://school.kidsnewflowerschool.com/my-profile</code></td>
+              </tr>
+              <tr>
+                <td style="padding-left: 12px;"><strong>Method</strong></td>
+                <td><span class="badge badge-success">GET</span></td>
+              </tr>
+              <tr>
+                <td style="padding-left: 12px;"><strong>Controller Target</strong></td>
+                <td><code>App\Http\Controllers\ProfileController@index</code></td>
+              </tr>
+              <tr>
+                <td style="padding-left: 12px;"><strong>Route Name</strong></td>
+                <td><span class="badge badge-info">my-profile</span></td>
+              </tr>
+              <tr>
+                <td style="padding-left: 12px;"><strong>Middleware Group</strong></td>
+                <td><code>web</code>, <code>auth</code></td>
+              </tr>
+              <tr>
+                <td style="padding-left: 12px;"><strong>Environment</strong></td>
+                <td><span class="badge badge-warning">local (debug=true)</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
-<marquee scrollamount="20">
-🌈 WARNING 🌈 TOO MUCH COLOR 🌈 INTERNET FROM 2006 🌈
-</marquee>
-
-<div class="floating" style="top:10%; left:20%;">🦆</div>
-<div class="floating" style="top:70%; left:80%;">👁️</div>
-<div class="floating" style="top:30%; left:60%;">🍕</div>
-<div class="floating" style="top:80%; left:10%;">🐸</div>
-<div class="floating" style="top:50%; left:90%;">💀</div>
-
-<script>
-function explode(){
-    for(let i=0;i<100;i++){
-
-        let div = document.createElement("div");
-
-        div.innerHTML = ["🐸","💀","👁️","🍕","🦆","🌈"][Math.floor(Math.random()*6)];
-
-        div.style.position = "absolute";
-        div.style.left = Math.random()*window.innerWidth + "px";
-        div.style.top = Math.random()*window.innerHeight + "px";
-        div.style.fontSize = (20 + Math.random()*80) + "px";
-        div.style.transform = `rotate(${Math.random()*360}deg)`;
-
-        document.body.appendChild(div);
-    }
-
-    document.body.style.filter = "hue-rotate(180deg)";
-}
-</script>
-
+<!-- AdminLTE Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/js/adminlte.min.js"></script>
 </body>
 </html>
-https://www.effectivecpmnetwork.com/b1da6pacw?key=7918454d16618999a9e3ceb0e83aabbe
-
-<script async="async" data-cfasync="false" src="https://pl29456363.effectivecpmnetwork.com/9c6eea932be59bd17423c28e20fc4532/invoke.js"></script>
-<div id="container-9c6eea932be59bd17423c28e20fc4532"></div>
-
